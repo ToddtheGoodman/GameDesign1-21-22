@@ -22,12 +22,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
 
-        moveInput.x = Input.GetAxisRaw("Horizontal");
-        moveInput.y = Input.GetAxisRaw("Vertical");
-
-        moveInput.Normalize();
-        
-        myRB.velocity = moveInput * moveSpeed;
+        Movement();
 
 
         // move the player's Transform component        
@@ -41,5 +36,15 @@ public class PlayerController : MonoBehaviour
             //transform.Translate(Vector2.up * Time.deltaTime * sprintSpeed * Input.GetAxisRaw("Vertical"));
         }
 
+    }
+
+    void Movement()
+    {
+        moveInput.x = Input.GetAxisRaw("Horizontal");
+        moveInput.y = Input.GetAxisRaw("Vertical");
+
+        moveInput.Normalize();
+
+        myRB.velocity = moveInput * moveSpeed;
     }
 }
