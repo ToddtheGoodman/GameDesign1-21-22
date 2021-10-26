@@ -21,30 +21,25 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         Movement();
-
-
-        // move the player's Transform component        
-        //transform.Translate(Vector2.right * Time.deltaTime * moveSpeed * Input.GetAxisRaw("Horizontal"));
-        //transform.Translate(Vector2.up * Time.deltaTime * moveSpeed * Input.GetAxisRaw("Vertical"));
-        
-        //if I press left shift move at sprintSpeed otherwise move at moveSpeed
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-            //transform.Translate(Vector2.right * Time.deltaTime * sprintSpeed * Input.GetAxisRaw("Horizontal"));
-            //transform.Translate(Vector2.up * Time.deltaTime * sprintSpeed * Input.GetAxisRaw("Vertical"));
-        }
-
-    }
-
+    }   
+    
     void Movement()
     {
+        // Sets the moveInput (a Vector2) to the Horizontal and Vertical controls from the player input
         moveInput.x = Input.GetAxisRaw("Horizontal");
         moveInput.y = Input.GetAxisRaw("Vertical");
 
+        // Normalizes the speed when moving diagonal (see Subnautica)
         moveInput.Normalize();
 
+        // Adds velocity to the RigidBody * moveSpeed variable (float)
         myRB.velocity = moveInput * moveSpeed;
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            // Adds velocity to the RigidBody * sprintSpeed variable (float)
+            myRB.velocity = moveInput * sprintSpeed;
+        }
+
     }
 }
