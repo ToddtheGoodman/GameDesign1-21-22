@@ -18,6 +18,8 @@ public class Pickup : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        // add +1 to scoreValue from PickupScore script
+        PickupScore.scoreValue += 1;
         Destroy(gameObject);
     }
 

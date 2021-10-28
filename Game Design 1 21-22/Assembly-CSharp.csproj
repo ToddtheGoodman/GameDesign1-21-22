@@ -58,6 +58,7 @@
     <Compile Include="Assets\Scripts\PrintAgain.cs" />
     <Compile Include="Assets\Scripts\Print.cs" />
     <Compile Include="Assets\Scripts\Pickup.cs" />
+    <Compile Include="Assets\Scripts\PickupScore.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
