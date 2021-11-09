@@ -18,7 +18,9 @@ public class Spikes : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        Destroy(other.gameObject);
+        //When entering the trigger, - 1 from healthValue in HealthScore script
+        GameObject.Find("Canvas").GetComponent<HealthScore>().healthValue -= 1;
+        //Destroy(other.gameObject);
     }
 
 

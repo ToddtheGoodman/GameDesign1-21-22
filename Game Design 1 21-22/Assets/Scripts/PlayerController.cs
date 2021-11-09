@@ -11,17 +11,24 @@ public class PlayerController : MonoBehaviour
 
     public Vector2 moveInput;
 
+    public SpriteRenderer renderColor;
+
     
     // Start is called before the first frame update
     void Start()
     {
-        
+        renderColor.color = Color.magenta;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Movement();         
+        Movement();
+        if (GameObject.Find("Canvas").GetComponent<HealthScore>().healthValue < 1)
+        {
+            Destroy(gameObject);
+        }
+
     }   
     
     void Movement()
