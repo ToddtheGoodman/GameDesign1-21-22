@@ -53,14 +53,17 @@
     <UnityVersion>2020.3.18f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\HealthScore.cs" />
+    <Compile Include="Assets\Scripts\HealthPowerup.cs" />
     <Compile Include="Assets\Scripts\Spikes.cs" />
+    <Compile Include="Assets\Scripts\Key.cs" />
+    <Compile Include="Assets\Scripts\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\PickupScore.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\PrintAgain.cs" />
+    <Compile Include="Assets\Scripts\TreasureChest.cs" />
     <Compile Include="Assets\Scripts\Print.cs" />
     <Compile Include="Assets\Scripts\Pickup.cs" />
-    <Compile Include="Assets\Scripts\HealthScore.cs" />
-    <Compile Include="Assets\Scripts\HealthPowerup.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
