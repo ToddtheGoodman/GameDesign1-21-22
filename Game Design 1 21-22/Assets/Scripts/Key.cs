@@ -16,9 +16,14 @@ public class Key : MonoBehaviour
         
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerStay2D(Collider2D other)
     {
-        GameObject.Find("TreasureChest").GetComponent<TreasureChest>().gotKey = true;
-        Destroy(gameObject);
+        if (Input.GetKey(KeyCode.E))
+        {
+            GameObject.Find("TreasureChest").GetComponent<TreasureChest>().gotKey = true;
+            Destroy(gameObject);
+        }
+        
+        
     }
 }
