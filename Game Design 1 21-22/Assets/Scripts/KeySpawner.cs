@@ -5,7 +5,8 @@ using UnityEngine;
 public class KeySpawner : MonoBehaviour
 {
 
-    public GameObject key;
+    public GameObject key; 
+    
 
     // Start is called before the first frame update
     void Start()
@@ -15,7 +16,7 @@ public class KeySpawner : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {        
         
     }
 
@@ -24,6 +25,6 @@ public class KeySpawner : MonoBehaviour
         //Spawn - What, Where (Position), Rotation
         Instantiate(key, new Vector3(0, 0, 0), Quaternion.identity);
         Destroy(gameObject);
-    }
+    }      
 
 }
