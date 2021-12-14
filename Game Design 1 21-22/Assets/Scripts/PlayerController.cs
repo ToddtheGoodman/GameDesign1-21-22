@@ -5,25 +5,26 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed;
-    public float sprintSpeed;
+    public float sprintSpeed;    
 
     public Rigidbody2D myRB;
 
-    public Vector2 moveInput;
-
+    private Vector2 moveInput;
     
+    public Animator myAnim;
 
-    
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        myAnim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
         Movement();
+        Attack();
         if (GameObject.Find("Canvas").GetComponent<HealthScore>().healthValue < 1)
         {
             Destroy(gameObject);
@@ -49,4 +50,14 @@ public class PlayerController : MonoBehaviour
         }
 
     }
+
+    void Attack()
+    {
+        //This will trigger the "Attack" condition to switch animations
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            myAnim.SetTrigger("Attack");
+        }
+    }
+      
 }

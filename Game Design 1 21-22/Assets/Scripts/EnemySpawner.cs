@@ -8,6 +8,8 @@ public class EnemySpawner : MonoBehaviour
     public GameObject enemy;
     public bool enemyReady;
 
+    public Transform spawnLocation;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,7 +30,7 @@ public class EnemySpawner : MonoBehaviour
     {
         enemyReady = false;
         yield return new WaitForSeconds(3);
-        Instantiate(enemy, new Vector3(0, 0, 0), Quaternion.identity);
+        Instantiate(enemy, spawnLocation.position, Quaternion.identity);
         enemyReady = true;
     }
 
