@@ -67,6 +67,8 @@
     <Compile Include="Assets\Scripts\Pickup.cs" />
     <Compile Include="Assets\Scripts\KeySpawner.cs" />
     <Compile Include="Assets\Scripts\EnemySpawner.cs" />
+    <Compile Include="Assets\Scripts\SceneLoader.cs" />
+    <Compile Include="Assets\Scripts\OnLoad.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

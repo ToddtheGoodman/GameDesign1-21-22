@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         myAnim = GetComponent<Animator>();
+        DontDestroyOnLoad(gameObject);
     }
 
     // Update is called once per frame
