@@ -13,10 +13,21 @@ public class PlayerController : MonoBehaviour
     
     public Animator myAnim;
 
+    public static PlayerController exist;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        if (exist==null)
+        {
+            exist = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
         myAnim = GetComponent<Animator>();
         DontDestroyOnLoad(gameObject);
     }
